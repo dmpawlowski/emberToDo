@@ -11,7 +11,7 @@
   <script type="text/x-handlebars">
     <h1>To Do</h1>
     <input id="taskfeild" type="text" autofocus="true" />
-    <button id="taskbutton">Add Task</button>
+    <button {{action "addTask"}}>Add Task</button>
 
     {{outlet}}
   </script>

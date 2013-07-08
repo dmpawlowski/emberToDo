@@ -14,6 +14,12 @@ App.IndexRoute = Ember.Route.extend({
   }
 });
 
+App.IndexController = Ember.ObjectController.extend({
+  addTask: function (){
+    alert("add task");
+  }
+});
+
 App.ToDo = DS.Model.extend({
   task: DS.attr('string'),
   completed: DS.attr('boolean')
@@ -24,3 +30,4 @@ App.ToDo.FIXTURES =[{
   task: "Eat Dinner",
   completed: false
 }]
+

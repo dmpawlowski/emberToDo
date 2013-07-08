@@ -10,13 +10,13 @@
 
   <script type="text/x-handlebars">
     <h1>To Do</h1>
-    <input id="taskfeild" type="text" autofocus="true" />
-    <button {{action "addTask"}}>Add Task</button>
 
     {{outlet}}
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
+    <input id="taskfeild" type="text" autofocus="true" />
+    <button {{action "addTask"}}>Add Task</button>
     <ul>
     {{#each model}}
       <li>{{task}}</li>

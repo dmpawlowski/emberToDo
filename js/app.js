@@ -1,7 +1,8 @@
 App = Ember.Application.create();
 
 App.Store = DS.Store.extend({
-  adapter: 'DS.FixtureAdapter'
+  revision: 13,
+  adapter: 'DS.LSAdapter'
 });
 
 App.Router.map(function() {
@@ -16,7 +17,13 @@ App.IndexRoute = Ember.Route.extend({
 
 App.IndexController = Ember.ObjectController.extend({
   addTask: function (){
-    alert("add task");
+    var task = this.get("task");
+    App.ToDo.createRecord({
+      task: task,
+      completed: false
+    });
+    this.set("task", "");
+    this.get("store").commit();
   }
 });
 

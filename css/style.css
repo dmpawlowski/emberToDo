@@ -2,3 +2,8 @@
 html, body {
     margin: 20px;
 }
+
+li {
+  list-style-type: none;
+}
+

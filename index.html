@@ -19,9 +19,9 @@
     <button {{action "addTask"}}>Add Task</button>
     <ul>
     {{#each model}}
-    <li>
+    <li {{bindAttr class="completed:grayout"}}>
       {{view Ember.Checkbox checkedBinding="completed"}}
-      {{task}}
+      <label>{{task}}</label>
     </li>
     {{/each}}
     </ul>

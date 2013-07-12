@@ -29,7 +29,12 @@ App.IndexController = Ember.ObjectController.extend({
 
 App.ToDo = DS.Model.extend({
   task: DS.attr('string'),
-  completed: DS.attr('boolean')
+  completed: DS.attr('boolean'),
+
+  completedChanged: Ember.observer(function() {
+    console.log(';aijsdf;');
+    this.get("store").commit();
+  }, 'completed')
 });
 
 App.ToDo.FIXTURES =[{

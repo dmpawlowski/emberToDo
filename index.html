@@ -20,8 +20,10 @@
     <ul>
     {{#each model}}
     <li {{bindAttr class="completed:grayout"}}>
+    <label>
       {{view Ember.Checkbox checkedBinding="completed"}}
-      <label>{{task}}</label>
+      {{task}}
+    </label>
     </li>
     {{/each}}
     </ul>

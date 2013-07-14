@@ -32,7 +32,6 @@ App.ToDo = DS.Model.extend({
   completed: DS.attr('boolean'),
 
   completedChanged: Ember.observer(function() {
-    console.log(';aijsdf;');
     this.get("store").commit();
   }, 'completed')
 });

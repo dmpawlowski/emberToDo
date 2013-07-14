@@ -15,7 +15,7 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
-    {{ input valueBinding="task" action="addTask"}}
+    {{view Ember.TextField valueBinding="task" action="addTask" autofocus="true"}}
     <button {{action "addTask"}}>Add Task</button>
     <ul>
     {{#each model}}

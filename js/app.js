@@ -36,6 +36,12 @@ App.ToDo = DS.Model.extend({
   }, 'completed')
 });
 
+App.FocusedTaskField = Em.TextField.extend({
+  didInsertElement: function(){
+    this.$().focus();
+  }
+});
+
 App.ToDo.FIXTURES =[{
   id: 1,
   task: "Eat Dinner",

@@ -5,29 +5,9 @@
 <title>To Do</title>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
+  {{load "_templates.html"}}
 </head>
 <body>
-
-  <script type="text/x-handlebars">
-    <h1>To Do</h1>
-
-    {{outlet}}
-  </script>
-
-  <script type="text/x-handlebars" data-template-name="index">
-    {{view App.FocusedTaskField valueBinding="task" action="addTask" autofocus="true"}}
-    <button {{action "addTask"}}>Add Task</button>
-    <ul>
-    {{#each model}}
-    <li {{bindAttr class="completed:grayout"}}>
-    <label>
-      {{view Ember.Checkbox checkedBinding="completed"}}
-      {{task}}
-    </label>
-    </li>
-    {{/each}}
-    </ul>
-  </script>
 
   <script src="js/libs/jquery-1.9.1.js"></script>
   <script src="js/libs/handlebars-1.0.0-rc.4.js"></script>

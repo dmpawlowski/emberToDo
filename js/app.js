@@ -16,6 +16,14 @@ App.IndexRoute = Ember.Route.extend({
 });
 
 App.IndexController = Ember.ObjectController.extend({
+
+  isEditing: false,
+
+  edit: function(){
+    this.set("isEditing", true);
+    console.log('yay');
+  },
+
   addTask: function (){
     var task = this.get("task");
     App.ToDo.createRecord({
@@ -25,6 +33,7 @@ App.IndexController = Ember.ObjectController.extend({
     this.set("task", "");
     this.get("store").commit();
   }
+
 });
 
 App.ToDo = DS.Model.extend({
@@ -40,6 +49,11 @@ App.FocusedTaskField = Em.TextField.extend({
   didInsertElement: function(){
     this.$().focus();
   }
+});
+
+App.EditView = Em.TextField.extend({
+  classNames: ['edit'],
+  valueBinding: 'App.ToDo.task',
 });
 
 App.ToDo.FIXTURES =[{

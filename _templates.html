@@ -1,0 +1,25 @@
+  <script type="text/x-handlebars">
+    <h1>To Do</h1>
+
+    {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="index">
+    {{view App.FocusedTaskField valueBinding="task" action="addTask" autofocus="true"}}
+    <button {{action "addTask"}}>Add Task</button>
+    <ul>
+    {{#each model}}
+    <li {{bindAttr class="completed:grayout"}}>
+      {{#if isEditing}}
+        //{{ view App.EditView todoBinding="this"}}
+        <p>Hello</p>
+      {{else}}
+        {{view Ember.Checkbox checkedBinding="completed"}}
+        <label {{action "edit" on="doubleClick"}}>
+          {{task}}
+        </label>
+      {{/if}}
+    </li>
+    {{/each}}
+    </ul>
+  </script>
